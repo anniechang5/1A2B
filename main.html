@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1A2B猜數字</title>
+  <link rel="stylesheet" href="main.css">
+  <style>
+    body {
+      overflow-y: auto !important;
+      display: block !important;
+      height: auto ;
+      align-items: flex-start;
+    }
+  </style>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDWu1lxHAjk73UZB8H4vtV0MF-AGen1qGU",
+      authDomain: "class-d59ae.firebaseapp.com",
+      databaseURL: "https://class-d59ae-default-rtdb.firebaseio.com",
+      projectId: "class-d59ae",
+      appId: "1:577702223955:web:036c1a4fcf5520b8aba6a6"
+    };
+    if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="guess-box">
+      <input type="text" maxlength="1" readonly>
+      <input type="text" maxlength="1" readonly>
+      <input type="text" maxlength="1" readonly>
+      <input type="text" maxlength="1" readonly>
+      <button class="control-btn" onclick="checkGuess()">確認</button>
+      <button class="control-btn" onclick="deleteNumber()">←</button>
+    </div>
+
+    <div class="number-pad">
+      <button class="number-btn" onclick="inputNumber(0, this)">0</button>
+      <button class="number-btn" onclick="inputNumber(1, this)">1</button>
+      <button class="number-btn" onclick="inputNumber(2, this)">2</button>
+      <button class="number-btn" onclick="inputNumber(3, this)">3</button>
+      <button class="number-btn" onclick="inputNumber(4, this)">4</button>
+      <button class="number-btn" onclick="inputNumber(5, this)">5</button>
+      <button class="number-btn" onclick="inputNumber(6, this)">6</button>
+      <button class="number-btn" onclick="inputNumber(7, this)">7</button>
+      <button class="number-btn" onclick="inputNumber(8, this)">8</button>
+      <button class="number-btn" onclick="inputNumber(9, this)">9</button>
+    </div>
+
+    <div class="history" id="history"></div>
+    <div class="result" id="result"></div>
+
+    <div class="modal" id="summaryModal">
+      <div class="modal-content">
+        <h1>1A2B猜數字</h1>
+        <div class="info" id="final-answer">謎底：</div>
+        <div class="info" id="final-count">所用次數：</div>
+        <button onclick="window.location.href='rank.html'">查看排行榜</button>
+        <button onclick="location.reload()">再玩一次</button>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
