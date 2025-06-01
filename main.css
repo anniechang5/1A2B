@@ -1,0 +1,330 @@
+* {
+    box-sizing: border-box;
+    font-family: "Noto Sans TC", sans-serif;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url('img/background.jpg');
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    width: 700px;
+    margin: 60px auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+
+  .login-container {
+    width: 500px;
+    margin: 100px auto;
+    background-color: #928473;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  .login-title {
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+    color: #928473;
+    text-shadow: 2px 2px 0px lightgray;
+  }
+
+  .input-box {
+    margin: 20px 0;
+  }
+
+  .input-box input {
+    width: 80%;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 30px;
+    border: none;
+    padding: 0 20px;
+  }
+
+  .button-box {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .button-box button {
+    padding: 8px 30px;
+    font-size: 18px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .button-register {
+    background-color: #fbf1db;
+    color: #928473;
+    border: 2px solid #928473;
+  }
+
+  .button-login {
+    background-color: #fbf1db;
+    color: #928473;
+    border: 2px solid #928473;
+  }
+
+  .button-register:hover, .button-login:hover {
+    background-color: #928473;
+    color: #fbf1db;
+    border: 2px solid #fbf1db;
+  }
+
+  .start-container {
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  h1 {
+    font-size: 32px;
+    margin-top: 100px;
+    margin-bottom: 40px;
+  }
+
+  .button-box a {
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 2px solid #928473;
+    color: #928473;
+    background-color: #fbf1db;
+  }
+
+  .button-box a:hover {
+    background-color: #928473;
+    color: #fbf1db;
+  }
+
+  .rule-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 100px auto;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    border-radius: 16px;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .start-button {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: 2px solid #928473;
+    color: #928473;
+    background-color: #fbf1db;
+    text-decoration: none;
+  }
+
+  .start-button:hover{
+    background-color: #928473;
+    color: #fbf1db;
+  }
+
+  .guess-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .guess-box input {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid #888;
+    border-radius: 8px;
+  }
+
+  .number-pad {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .number-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    border-radius: 50%;
+    border: 2px solid #928473;
+    background-color: #fbf1db;
+    color: #928473;
+    cursor: pointer;
+  }
+
+  .number-btn.used, .number-btn:hover:not(.used) {
+    background-color: #928473;
+    color: #fbf1db;
+  }
+
+  .control-btn {
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #928473;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .control-btn:hover {
+    background-color: #fbf1db;
+    color: #928473;
+  }
+
+  .history {
+    margin-top: 30px;
+    overflow-y: auto;    /* 垂直可捲動 */
+  }
+
+  .history-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+
+  .history-entry {
+    font-size: 24px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 48%;
+    line-height: 1.2;
+  }
+
+  .result {
+    font-size: 36px;
+    font-weight: bold;
+    color: #d22;
+    margin-top: 10px;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modal-content {
+    background-color: #928473;
+    color: white;
+    padding: 40px;
+    border-radius: 16px;
+    border: 6px dotted white;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    margin: auto;
+  }
+
+  .modal-content h1 {
+    font-size: 48px;
+    margin-top: 7px;
+  }
+
+  .modal-content .info {
+    font-size: 20px;
+    margin: 10px 0;
+    background: white;
+    color: #333;
+    padding: 6px;
+    border-radius: 20px;
+  }
+
+  .modal-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #fbf1db;
+    color: #928473;
+  }
+
+  .modal-content button:hover {
+    background-color: #928473;
+    color: #fbf1db;
+    border: 2px solid #fbf1db;
+  }
+
+  .leaderboard-container {
+    width: 700px;
+    margin: 60px auto;
+    background-color: #928473;
+    color: white;
+    border: 8px dotted white;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .table-row {
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    margin: 10px 0;
+    margin-left: 50px;
+  }
+  .table-header {
+    font-weight: bold;
+    font-size: 24px;
+  }
+  .btn-replay {
+    margin-top: 30px;
+    background-color: #fbf1db;
+    color: #928473;
+    border: 2px solid #928473;
+    border-radius: 20px;
+    padding: 10px 30px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .btn-replay:hover{
+    background-color: #928473;
+    color: #fbf1db;
+    border: 2px solid #fbf1db;
+  }

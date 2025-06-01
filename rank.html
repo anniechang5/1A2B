@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>排行榜</title>
+  <link rel="stylesheet" href="main.css">
+  <style>
+    body {
+      overflow-y: auto !important;
+      display: block !important;
+      height: auto ;
+      align-items: flex-start;
+    }
+  </style>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDWu1lxHAjk73UZB8H4vtV0MF-AGen1qGU",
+      authDomain: "class-d59ae.firebaseapp.com",
+      databaseURL: "https://class-d59ae-default-rtdb.firebaseio.com/",
+      projectId: "class-d59ae",
+      appId: "1:577702223955:web:036c1a4fcf5520b8aba6a6"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</head>
+<body>
+  <div class="leaderboard-container">
+    <h1>排行榜</h1>
+    <div class="table-row table-header">
+      <div>排名</div>
+      <div>玩家名稱</div>
+      <div>所用次數</div>
+    </div>
+    <div id="rank-list"></div>
+    <button class="btn-replay" onclick="location.href='main.html'">再玩一次</button>
+  </div>
+  <script src="rank.js"></script>
+</body>
+</html>
